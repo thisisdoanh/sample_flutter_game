@@ -18,6 +18,7 @@ class AppContainer extends StatelessWidget {
     this.backgroundImage,
     this.backgroundGradientColor,
     this.backgroundImageFit,
+    this.backgroundWidget,
   });
 
   final PreferredSizeWidget? appBar;
@@ -32,6 +33,7 @@ class AppContainer extends StatelessWidget {
   final Widget? floatingActionButton;
   final AssetGenImage? backgroundImage;
   final BoxFit? backgroundImageFit;
+  final Widget? backgroundWidget;
 
   @override
   Widget build(BuildContext context) {
@@ -50,9 +52,13 @@ class AppContainer extends StatelessWidget {
               height: double.infinity,
               fit: backgroundImageFit ?? BoxFit.cover,
             ),
+          ?backgroundWidget,
           Scaffold(
             resizeToAvoidBottomInset: resizeToAvoidBottomInset,
-            backgroundColor: backgroundImage != null || backgroundGradientColor != null
+            backgroundColor:
+                backgroundImage != null ||
+                    backgroundGradientColor != null ||
+                    backgroundWidget != null
                 ? AppColors.transparent
                 : (backgroundColor ?? context.theme.scaffoldBackgroundColor),
             appBar: appBar,

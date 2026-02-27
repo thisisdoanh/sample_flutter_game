@@ -14,7 +14,7 @@ part 'splash_state.dart';
 
 @injectable
 class SplashBloc extends BaseBloc<SplashEvent, SplashState> {
-  SplashBloc(this._appRouter, this._appBloc) : super(const SplashState()) {
+  SplashBloc(this._appRouter) : super(const SplashState()) {
     on<SplashEvent>((event, emit) async {
       try {
         switch (event) {
@@ -29,10 +29,8 @@ class SplashBloc extends BaseBloc<SplashEvent, SplashState> {
   }
 
   Future<void> _handleEventLoadData(Emitter<SplashState> emit, _LoadData event) async {
-    _appBloc.add(const AppEvent.loadListGame());
     _appRouter.replace(const ChooseGameRoute());
   }
 
   final AppRouter _appRouter;
-  final AppBloc _appBloc;
 }

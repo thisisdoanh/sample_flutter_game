@@ -5,6 +5,7 @@ abstract class ChooseGameState extends BaseState with _$ChooseGameState {
   const factory ChooseGameState({
     @Default(PageStatus.Loaded) PageStatus pageStatus,
     String? pageErrorMessage,
+    @Default([]) List<GameModel> games,
   }) = _ChooseGameState;
 
   const ChooseGameState._({
