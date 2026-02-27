@@ -74,6 +74,7 @@ dependencies:
   device_info_plus: ^11.5.0
   flutter_flavorizr: ^2.4.1
   path_provider: ^2.1.5
+  bouncy_button: ^1.0.4
 
 dev_dependencies:
   flutter_test:
