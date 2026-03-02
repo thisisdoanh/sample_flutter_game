@@ -75,6 +75,7 @@ dependencies:
   flutter_flavorizr: ^2.4.1
   path_provider: ^2.1.5
   bouncy_button: ^1.0.4
+  sensors_plus: ^4.0.2
 
 dev_dependencies:
   flutter_test:

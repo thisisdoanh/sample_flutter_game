@@ -2,5 +2,36 @@
   "@@locale": "zh",
   "error": "错误",
   "timeoutErrorOccurred": "发生超时错误",
-  "errorSomething": "发生错误..."
+  "errorSomething": "发生错误...",
+  "hudTime": "时间",
+  "hudBest": "最佳",
+  "gameOverTitle": "游戏结束",
+  "gameOverSubtitle": "球从路上掉了下来！",
+  "scoreYourTime": "你的时间",
+  "newBestRecord": "新纪录！",
+  "playAgain": "再玩一次",
+  "bestScoreLabel": "最佳: {score}秒",
+  "@bestScoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "balanceBallTitle": "平衡球",
+  "balanceBallDescription": "倾斜手机，引导球\n沿着蜿蜒的道路前进！",
+  "startGame": "开始",
+  "gyroscopeControlled": "加速度计控制",
+  "gamesAvailable": "{count} 个游戏可用",
+  "@gamesAvailable": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickA": "选择一个",
+  "gameExclamation": "游戏！",
+  "chooseAdventure": "选择你的冒险 & 开始游戏",
+  "play": "玩"
 }

@@ -2,5 +2,36 @@
   "@@locale": "es",
   "error": "Error",
   "timeoutErrorOccurred": "Se produjo un error de tiempo de espera",
-  "errorSomething": "Algo salió mal..."
+  "errorSomething": "Algo salió mal...",
+  "hudTime": "TIEMPO",
+  "hudBest": "MEJOR",
+  "gameOverTitle": "FIN DEL JUEGO",
+  "gameOverSubtitle": "¡La pelota se salió del camino!",
+  "scoreYourTime": "TU TIEMPO",
+  "newBestRecord": "¡NUEVO RÉCORD!",
+  "playAgain": "JUGAR DE NUEVO",
+  "bestScoreLabel": "Mejor: {score}s",
+  "@bestScoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "balanceBallTitle": "BALANCE BALL",
+  "balanceBallDescription": "¡Inclina tu teléfono para guiar la pelota\na lo largo del camino sinuoso!",
+  "startGame": "INICIAR",
+  "gyroscopeControlled": "Controlado por acelerómetro",
+  "gamesAvailable": "{count} juegos disponibles",
+  "@gamesAvailable": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickA": "Elige un",
+  "gameExclamation": "¡Juego!",
+  "chooseAdventure": "Elige tu aventura & empieza a jugar",
+  "play": "JUGAR"
 }

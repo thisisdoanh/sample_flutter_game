@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:template_bloc/data/model/game_model.dart';
 import 'package:template_bloc/domain/enums/game_route.dart';
-import 'package:template_bloc/gen/fonts.gen.dart';
+import 'package:template_bloc/l10n/app_localizations.dart';
 import 'package:template_bloc/presentation/base/base_page.dart';
 import 'package:template_bloc/presentation/base/base_sub_page.dart';
 import 'package:template_bloc/presentation/resources/colors.dart';
@@ -13,6 +13,7 @@ import 'package:template_bloc/presentation/router/router.dart';
 import 'package:template_bloc/presentation/view/pages/choose_game/choose_game_bloc.dart';
 import 'package:template_bloc/presentation/widgets/app_container.dart';
 import 'package:template_bloc/presentation/widgets/background_bubbles.dart';
+import 'package:template_bloc/shared/extension/text_style.dart';
 
 part 'widget/count_badge.dart';
 part 'widget/game_card.dart';

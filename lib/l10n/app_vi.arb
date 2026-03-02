@@ -2,5 +2,36 @@
   "@@locale": "vi",
   "error": "Lỗi",
   "timeoutErrorOccurred": "Đã xảy ra lỗi thời gian chờ",
-  "errorSomething": "Đã xảy ra lỗi..."
+  "errorSomething": "Đã xảy ra lỗi...",
+  "hudTime": "THỜI GIAN",
+  "hudBest": "KỶ LỤC",
+  "gameOverTitle": "GAME OVER",
+  "gameOverSubtitle": "Bóng đã rơi khỏi đường!",
+  "scoreYourTime": "THỜI GIAN CỦA BẠN",
+  "newBestRecord": "KỶ LỤC MỚI!",
+  "playAgain": "CHƠI LẠI",
+  "bestScoreLabel": "Kỷ lục: {score}s",
+  "@bestScoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "balanceBallTitle": "BALANCE BALL",
+  "balanceBallDescription": "Nghiêng điện thoại để dẫn bóng\ndọc theo con đường quanh co!",
+  "startGame": "BẮT ĐẦU",
+  "gyroscopeControlled": "Điều khiển bằng gia tốc kế",
+  "gamesAvailable": "{count} trò chơi có sẵn",
+  "@gamesAvailable": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickA": "Chọn một",
+  "gameExclamation": "Trò chơi!",
+  "chooseAdventure": "Chọn cuộc phiêu lưu của bạn & bắt đầu chơi",
+  "play": "CHƠI"
 }

@@ -3,6 +3,7 @@ part of '../choose_game_page.dart';
 class _Header extends BaseSubPage<ChooseGameBloc, ChooseGameEvent, ChooseGameState> {
   @override
   Widget builder(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Padding(
       padding: EdgeInsets.fromLTRB(20.w, 28.h, 20.w, 20.h),
       child: Column(
@@ -30,42 +31,29 @@ class _Header extends BaseSubPage<ChooseGameBloc, ChooseGameEvent, ChooseGameSta
 
           // "Pick a"
           Text(
-            'Pick a',
-            style: TextStyle(
-              fontSize: 38.sp,
-              fontWeight: FontWeight.w900,
-              color: AppColors.dark100,
-              fontFamily: FontFamily.manrope,
-              height: 1.1,
-            ),
+            l10n.pickA,
+            style: kTextStyle
+                .size(38.sp)
+                .withColor(AppColors.dark100)
+                .black
+                .withHeight(1.1),
           ),
 
-          // "Game!" — gradient accent
+          // "Game!" — color overridden by ShaderMask
           ShaderMask(
             blendMode: BlendMode.srcIn,
             shaderCallback: (bounds) => AppColors.warmLN.createShader(bounds),
             child: Text(
-              'Game!',
-              style: TextStyle(
-                fontSize: 38.sp,
-                fontWeight: FontWeight.w900,
-                fontFamily: FontFamily.manrope,
-                color: Colors.white, // overridden by ShaderMask
-                height: 1.1,
-              ),
+              l10n.gameExclamation,
+              style: kTextStyle.size(38.sp).black.withHeight(1.1),
             ),
           ),
           SizedBox(height: 8.h),
 
           // Subtitle
           Text(
-            'Choose your adventure & start playing',
-            style: TextStyle(
-              fontSize: 14.sp,
-              color: AppColors.gray90A8,
-              fontFamily: FontFamily.manrope,
-              fontWeight: FontWeight.w500,
-            ),
+            l10n.chooseAdventure,
+            style: kTextStyle.size(14.sp).withColor(AppColors.gray90A8).medium,
           ),
           SizedBox(height: 16.h),
 

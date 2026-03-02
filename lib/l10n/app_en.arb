@@ -2,5 +2,36 @@
   "@@locale": "en",
   "error": "Error",
   "timeoutErrorOccurred": "Timeout error occurred",
-  "errorSomething": "Error something..."
+  "errorSomething": "Error something...",
+  "hudTime": "TIME",
+  "hudBest": "BEST",
+  "gameOverTitle": "GAME OVER",
+  "gameOverSubtitle": "The ball fell off the road!",
+  "scoreYourTime": "YOUR TIME",
+  "newBestRecord": "NEW BEST RECORD!",
+  "playAgain": "PLAY AGAIN",
+  "bestScoreLabel": "Best: {score}s",
+  "@bestScoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "balanceBallTitle": "BALANCE BALL",
+  "balanceBallDescription": "Tilt your phone to guide the ball\nalong the winding road!",
+  "startGame": "START",
+  "gyroscopeControlled": "Accelerometer controlled",
+  "gamesAvailable": "{count} Games Available",
+  "@gamesAvailable": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickA": "Pick a",
+  "gameExclamation": "Game!",
+  "chooseAdventure": "Choose your adventure & start playing",
+  "play": "PLAY"
 }

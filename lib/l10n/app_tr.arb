@@ -2,5 +2,36 @@
   "@@locale": "tr",
   "error": "Hata",
   "timeoutErrorOccurred": "Zaman aşımı hatası oluştu",
-  "errorSomething": "Bir hata oluştu..."
+  "errorSomething": "Bir hata oluştu...",
+  "hudTime": "SÜRE",
+  "hudBest": "EN İYİ",
+  "gameOverTitle": "OYUN BİTTİ",
+  "gameOverSubtitle": "Top yoldan düştü!",
+  "scoreYourTime": "SÜRENİZ",
+  "newBestRecord": "YENİ REKOR!",
+  "playAgain": "TEKRAR OYNA",
+  "bestScoreLabel": "En iyi: {score}s",
+  "@bestScoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "balanceBallTitle": "BALANCE BALL",
+  "balanceBallDescription": "Topu kıvrımlı yol boyunca yönlendirmek\niçin telefonunuzu eğin!",
+  "startGame": "BAŞLA",
+  "gyroscopeControlled": "İvmeölçer kontrolü",
+  "gamesAvailable": "{count} oyun mevcut",
+  "@gamesAvailable": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickA": "Bir",
+  "gameExclamation": "Oyun Seç!",
+  "chooseAdventure": "Maceranı seç & oynamaya başla",
+  "play": "OYNA"
 }

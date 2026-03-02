@@ -13,6 +13,7 @@ class PrefStoreHelper extends PrefStore {
   static const _darkModeKey = 'is_dark_mode';
   static const _languageKey = 'language_code';
   static const _firstLaunchDoneKey = 'first_launch_done';
+  static const _balanceBallBestScoreKey = 'balance_ball_best_score';
 
   // Auth
   @override
@@ -53,4 +54,11 @@ class PrefStoreHelper extends PrefStore {
 
   @override
   Future<bool> setFirstLaunchDone() => _prefs.setBool(_firstLaunchDoneKey, true);
+
+  // Games
+  @override
+  int getBalanceBallBestScore() => _prefs.getInt(_balanceBallBestScoreKey) ?? 0;
+
+  @override
+  Future<bool> saveBalanceBallBestScore(int score) => _prefs.setInt(_balanceBallBestScoreKey, score);
 }

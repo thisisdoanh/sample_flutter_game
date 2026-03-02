@@ -2,5 +2,36 @@
   "@@locale": "id",
   "error": "Kesalahan",
   "timeoutErrorOccurred": "Terjadi kesalahan waktu habis",
-  "errorSomething": "Terjadi kesalahan..."
+  "errorSomething": "Terjadi kesalahan...",
+  "hudTime": "WAKTU",
+  "hudBest": "TERBAIK",
+  "gameOverTitle": "GAME OVER",
+  "gameOverSubtitle": "Bola jatuh dari jalan!",
+  "scoreYourTime": "WAKTU KAMU",
+  "newBestRecord": "REKOR TERBAIK BARU!",
+  "playAgain": "MAIN LAGI",
+  "bestScoreLabel": "Terbaik: {score}s",
+  "@bestScoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "balanceBallTitle": "BALANCE BALL",
+  "balanceBallDescription": "Miringkan ponselmu untuk memandu bola\ndi sepanjang jalan yang berliku!",
+  "startGame": "MULAI",
+  "gyroscopeControlled": "Dikontrol Akselerometer",
+  "gamesAvailable": "{count} game tersedia",
+  "@gamesAvailable": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickA": "Pilih",
+  "gameExclamation": "Game!",
+  "chooseAdventure": "Pilih petualanganmu & mulai bermain",
+  "play": "MAIN"
 }

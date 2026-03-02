@@ -6,6 +6,7 @@ class _GameCard extends BaseSubPage<ChooseGameBloc, ChooseGameEvent, ChooseGameS
 
   @override
   Widget builder(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return BouncyButton.primary(
       onPressed: () {
         _navigateToGame(context, gameModel.targetRoute);
@@ -40,13 +41,11 @@ class _GameCard extends BaseSubPage<ChooseGameBloc, ChooseGameEvent, ChooseGameS
           // Game name
           Text(
             gameModel.name,
-            style: TextStyle(
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w800,
-              color: Colors.white,
-              fontFamily: FontFamily.manrope,
-              height: 1.2,
-            ),
+            style: kTextStyle
+                .size(14.sp)
+                .withColor(Colors.white)
+                .extraBold
+                .withHeight(1.2),
             textAlign: TextAlign.center,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
@@ -56,13 +55,11 @@ class _GameCard extends BaseSubPage<ChooseGameBloc, ChooseGameEvent, ChooseGameS
           // Description
           Text(
             gameModel.description,
-            style: TextStyle(
-              fontSize: 11.sp,
-              color: Colors.white.withValues(alpha: 0.82),
-              fontFamily: FontFamily.manrope,
-              fontWeight: FontWeight.w500,
-              height: 1.4,
-            ),
+            style: kTextStyle
+                .size(11.sp)
+                .withColor(Colors.white.withValues(alpha: 0.82))
+                .medium
+                .withHeight(1.4),
             textAlign: TextAlign.center,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
@@ -81,14 +78,12 @@ class _GameCard extends BaseSubPage<ChooseGameBloc, ChooseGameEvent, ChooseGameS
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  'PLAY',
-                  style: TextStyle(
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.w800,
-                    color: Colors.white,
-                    fontFamily: FontFamily.manrope,
-                    letterSpacing: 1.0,
-                  ),
+                  l10n.play,
+                  style: kTextStyle
+                      .size(10.sp)
+                      .withColor(Colors.white)
+                      .extraBold
+                      .withLetterSpacing(1.0),
                 ),
                 SizedBox(width: 3.w),
                 Icon(Icons.arrow_forward_ios_rounded, size: 8.r, color: Colors.white),
