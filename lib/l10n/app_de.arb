@@ -33,5 +33,18 @@
   "pickA": "Wähle ein",
   "gameExclamation": "Spiel!",
   "chooseAdventure": "Wähle dein Abenteuer & fang an zu spielen",
-  "play": "SPIELEN"
+  "play": "SPIELEN",
+  "catchTheButtonTitle": "Knopf fangen",
+  "catchTheButtonDescription": "Tippe den Knopf, bevor er verschwindet!\nTeste deine Reflexe.",
+  "hudTaps": "TIPPS",
+  "catchGameOverSubtitle": "Zeit ist um! Zähle deine Fänge.",
+  "scoreYourTaps": "DEINE TIPPS",
+  "catchBestTapsLabel": "Bestleistung: {count} Tipps",
+  "@catchBestTapsLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }

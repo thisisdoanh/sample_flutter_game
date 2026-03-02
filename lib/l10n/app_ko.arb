@@ -33,5 +33,18 @@
   "pickA": "게임을",
   "gameExclamation": "선택하세요!",
   "chooseAdventure": "당신의 모험을 선택하고 플레이를 시작하세요",
-  "play": "플레이"
+  "play": "플레이",
+  "catchTheButtonTitle": "버튼 잡기",
+  "catchTheButtonDescription": "사라지기 전에 버튼을 탭하세요!\n반사 신경을 테스트하세요.",
+  "hudTaps": "탭",
+  "catchGameOverSubtitle": "시간 초과! 잡은 횟수를 확인하세요.",
+  "scoreYourTaps": "당신의 탭",
+  "catchBestTapsLabel": "최고: {count} 탭",
+  "@catchBestTapsLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }

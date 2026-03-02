@@ -33,5 +33,18 @@
   "pickA": "Bir",
   "gameExclamation": "Oyun Seç!",
   "chooseAdventure": "Maceranı seç & oynamaya başla",
-  "play": "OYNA"
+  "play": "OYNA",
+  "catchTheButtonTitle": "Düğmeyi Yakala",
+  "catchTheButtonDescription": "Kaybolmadan önce düğmeye dokun!\nReflekslerini test et.",
+  "hudTaps": "TIK",
+  "catchGameOverSubtitle": "Süre doldu! Yakalamalarını say.",
+  "scoreYourTaps": "SENİN TIKLAMAN",
+  "catchBestTapsLabel": "En iyi: {count} tık",
+  "@catchBestTapsLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }

@@ -33,5 +33,18 @@
   "pickA": "Choisissez un",
   "gameExclamation": "Jeu!",
   "chooseAdventure": "Choisissez votre aventure & commencez à jouer",
-  "play": "JOUER"
+  "play": "JOUER",
+  "catchTheButtonTitle": "Attrapez le bouton",
+  "catchTheButtonDescription": "Touchez le bouton avant qu'il disparaisse!\nTestez vos réflexes.",
+  "hudTaps": "TAPS",
+  "catchGameOverSubtitle": "Temps écoulé! Comptez vos prises.",
+  "scoreYourTaps": "VOS TAPS",
+  "catchBestTapsLabel": "Meilleur: {count} taps",
+  "@catchBestTapsLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }

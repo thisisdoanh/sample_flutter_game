@@ -22,4 +22,7 @@ abstract class PrefStore {
   // Games
   int getBalanceBallBestScore();
   Future<bool> saveBalanceBallBestScore(int score);
+
+  int getCatchTheButtonBestScore();
+  Future<bool> saveCatchTheButtonBestScore(int score);
 }

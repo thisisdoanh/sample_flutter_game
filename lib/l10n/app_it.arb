@@ -33,5 +33,18 @@
   "pickA": "Scegli un",
   "gameExclamation": "Gioco!",
   "chooseAdventure": "Scegli la tua avventura & inizia a giocare",
-  "play": "GIOCA"
+  "play": "GIOCA",
+  "catchTheButtonTitle": "Cattura il pulsante",
+  "catchTheButtonDescription": "Tocca il pulsante prima che scompaia!\nMetti alla prova i tuoi riflessi.",
+  "hudTaps": "TOCCHI",
+  "catchGameOverSubtitle": "Tempo scaduto! Conta le tue catture.",
+  "scoreYourTaps": "I TUOI TOCCHI",
+  "catchBestTapsLabel": "Migliore: {count} tocchi",
+  "@catchBestTapsLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }

@@ -33,5 +33,18 @@
   "pickA": "Pilih",
   "gameExclamation": "Game!",
   "chooseAdventure": "Pilih petualanganmu & mulai bermain",
-  "play": "MAIN"
+  "play": "MAIN",
+  "catchTheButtonTitle": "Tangkap Tombolnya",
+  "catchTheButtonDescription": "Ketuk tombol sebelum menghilang!\nUji refleksmu.",
+  "hudTaps": "KETUK",
+  "catchGameOverSubtitle": "Waktu habis! Hitung tangkapanmu.",
+  "scoreYourTaps": "KETUKAN KAMU",
+  "catchBestTapsLabel": "Terbaik: {count} ketukan",
+  "@catchBestTapsLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }

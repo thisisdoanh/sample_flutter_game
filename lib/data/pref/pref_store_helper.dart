@@ -14,6 +14,7 @@ class PrefStoreHelper extends PrefStore {
   static const _languageKey = 'language_code';
   static const _firstLaunchDoneKey = 'first_launch_done';
   static const _balanceBallBestScoreKey = 'balance_ball_best_score';
+  static const _catchTheButtonBestScoreKey = 'catch_the_button_best_score';
 
   // Auth
   @override
@@ -61,4 +62,11 @@ class PrefStoreHelper extends PrefStore {
 
   @override
   Future<bool> saveBalanceBallBestScore(int score) => _prefs.setInt(_balanceBallBestScoreKey, score);
+
+  @override
+  int getCatchTheButtonBestScore() => _prefs.getInt(_catchTheButtonBestScoreKey) ?? 0;
+
+  @override
+  Future<bool> saveCatchTheButtonBestScore(int score) =>
+      _prefs.setInt(_catchTheButtonBestScoreKey, score);
 }

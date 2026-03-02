@@ -33,5 +33,18 @@
   "pickA": "选择一个",
   "gameExclamation": "游戏！",
   "chooseAdventure": "选择你的冒险 & 开始游戏",
-  "play": "玩"
+  "play": "玩",
+  "catchTheButtonTitle": "抓住按钮",
+  "catchTheButtonDescription": "在按钮消失前点击它！\n测试你的反应速度。",
+  "hudTaps": "点击",
+  "catchGameOverSubtitle": "时间到！数一数你的捕获次数。",
+  "scoreYourTaps": "你的点击",
+  "catchBestTapsLabel": "最佳: {count} 次",
+  "@catchBestTapsLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }

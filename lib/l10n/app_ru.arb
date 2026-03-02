@@ -33,5 +33,18 @@
   "pickA": "Выберите",
   "gameExclamation": "Игру!",
   "chooseAdventure": "Выберите приключение и начните играть",
-  "play": "ИГРАТЬ"
+  "play": "ИГРАТЬ",
+  "catchTheButtonTitle": "Поймай кнопку",
+  "catchTheButtonDescription": "Нажми кнопку, пока она не исчезла!\nПроверь свои рефлексы.",
+  "hudTaps": "ТАПЫ",
+  "catchGameOverSubtitle": "Время вышло! Считай свои уловы.",
+  "scoreYourTaps": "ТВОИ ТАПЫ",
+  "catchBestTapsLabel": "Лучший: {count} тапов",
+  "@catchBestTapsLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }

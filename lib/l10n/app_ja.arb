@@ -33,5 +33,18 @@
   "pickA": "ゲームを",
   "gameExclamation": "選んでね！",
   "chooseAdventure": "冒険を選んでプレイしよう",
-  "play": "プレイ"
+  "play": "プレイ",
+  "catchTheButtonTitle": "ボタンをキャッチ",
+  "catchTheButtonDescription": "消える前にボタンをタップ！\n反射神経をテストしよう。",
+  "hudTaps": "タップ",
+  "catchGameOverSubtitle": "時間切れ！キャッチ数を確認しよう。",
+  "scoreYourTaps": "あなたのタップ",
+  "catchBestTapsLabel": "最高: {count} タップ",
+  "@catchBestTapsLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }

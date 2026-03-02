@@ -33,5 +33,18 @@
   "pickA": "Chọn một",
   "gameExclamation": "Trò chơi!",
   "chooseAdventure": "Chọn cuộc phiêu lưu của bạn & bắt đầu chơi",
-  "play": "CHƠI"
+  "play": "CHƠI",
+  "catchTheButtonTitle": "Bắt Nút Bấm",
+  "catchTheButtonDescription": "Nhấn nút trước khi nó biến mất!\nThử phản xạ của bạn.",
+  "hudTaps": "LẦN",
+  "catchGameOverSubtitle": "Hết giờ! Kiểm tra số lần bắt được.",
+  "scoreYourTaps": "SỐ LẦN CỦA BẠN",
+  "catchBestTapsLabel": "Cao nhất: {count} lần",
+  "@catchBestTapsLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }

@@ -33,5 +33,18 @@
   "pickA": "एक",
   "gameExclamation": "गेम चुनें!",
   "chooseAdventure": "अपना साहसिक कार्य चुनें और खेलना शुरू करें",
-  "play": "खेलें"
+  "play": "खेलें",
+  "catchTheButtonTitle": "बटन पकड़ो",
+  "catchTheButtonDescription": "बटन गायब होने से पहले दबाएं!\nअपनी प्रतिक्रिया का परीक्षण करें।",
+  "hudTaps": "बार",
+  "catchGameOverSubtitle": "समय समाप्त! अपने कैच गिनें।",
+  "scoreYourTaps": "आपके बार",
+  "catchBestTapsLabel": "सर्वश्रेष्ठ: {count} बार",
+  "@catchBestTapsLabel": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }
