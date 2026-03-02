@@ -2,5 +2,36 @@
   "@@locale": "it",
   "error": "Errore",
   "timeoutErrorOccurred": "Si è verificato un errore di timeout",
-  "errorSomething": "Si è verificato un errore..."
+  "errorSomething": "Si è verificato un errore...",
+  "hudTime": "TEMPO",
+  "hudBest": "MIGLIORE",
+  "gameOverTitle": "FINE DEL GIOCO",
+  "gameOverSubtitle": "La palla è caduta dalla strada!",
+  "scoreYourTime": "IL TUO TEMPO",
+  "newBestRecord": "NUOVO RECORD!",
+  "playAgain": "GIOCA ANCORA",
+  "bestScoreLabel": "Migliore: {score}s",
+  "@bestScoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "balanceBallTitle": "BALANCE BALL",
+  "balanceBallDescription": "Inclina il telefono per guidare la palla\nlungo la strada tortuosa!",
+  "startGame": "INIZIA",
+  "gyroscopeControlled": "Controllato da giroscopio",
+  "gamesAvailable": "{count} giochi disponibili",
+  "@gamesAvailable": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickA": "Scegli un",
+  "gameExclamation": "Gioco!",
+  "chooseAdventure": "Scegli la tua avventura & inizia a giocare",
+  "play": "GIOCA"
 }

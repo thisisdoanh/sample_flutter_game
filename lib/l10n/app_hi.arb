@@ -2,5 +2,36 @@
   "@@locale": "hi",
   "error": "त्रुटि",
   "timeoutErrorOccurred": "समय समाप्ति त्रुटि हुई",
-  "errorSomething": "कुछ गलत हो गया..."
+  "errorSomething": "कुछ गलत हो गया...",
+  "hudTime": "समय",
+  "hudBest": "सर्वश्रेष्ठ",
+  "gameOverTitle": "गेम ओवर",
+  "gameOverSubtitle": "गेंद सड़क से गिर गई!",
+  "scoreYourTime": "आपका समय",
+  "newBestRecord": "नया सर्वश्रेष्ठ रिकॉर्ड!",
+  "playAgain": "फिर खेलें",
+  "bestScoreLabel": "सर्वश्रेष्ठ: {score}s",
+  "@bestScoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "balanceBallTitle": "BALANCE BALL",
+  "balanceBallDescription": "गेंद को टेढ़ी-मेढ़ी सड़क पर\nले जाने के लिए अपना फोन झुकाएं!",
+  "startGame": "शुरू करें",
+  "gyroscopeControlled": "जाइरोस्कोप नियंत्रित",
+  "gamesAvailable": "{count} गेम उपलब्ध",
+  "@gamesAvailable": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickA": "एक",
+  "gameExclamation": "गेम चुनें!",
+  "chooseAdventure": "अपना साहसिक कार्य चुनें और खेलना शुरू करें",
+  "play": "खेलें"
 }

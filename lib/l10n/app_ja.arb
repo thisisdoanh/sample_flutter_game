@@ -2,5 +2,36 @@
   "@@locale": "ja",
   "error": "エラー",
   "timeoutErrorOccurred": "タイムアウトエラーが発生しました",
-  "errorSomething": "何か問題が発生しました..."
+  "errorSomething": "何か問題が発生しました...",
+  "hudTime": "時間",
+  "hudBest": "ベスト",
+  "gameOverTitle": "ゲームオーバー",
+  "gameOverSubtitle": "ボールが道路から落ちました！",
+  "scoreYourTime": "あなたの時間",
+  "newBestRecord": "新記録達成！",
+  "playAgain": "もう一度プレイ",
+  "bestScoreLabel": "ベスト: {score}秒",
+  "@bestScoreLabel": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "balanceBallTitle": "バランスボール",
+  "balanceBallDescription": "電話を傾けてボールを\n曲がりくねった道に沿って導こう！",
+  "startGame": "スタート",
+  "gyroscopeControlled": "ジャイロスコープ操作",
+  "gamesAvailable": "{count}個のゲームが利用可能",
+  "@gamesAvailable": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pickA": "ゲームを",
+  "gameExclamation": "選んでね！",
+  "chooseAdventure": "冒険を選んでプレイしよう",
+  "play": "プレイ"
 }
