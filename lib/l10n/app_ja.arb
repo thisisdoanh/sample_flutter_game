@@ -21,7 +21,7 @@
   "balanceBallTitle": "バランスボール",
   "balanceBallDescription": "電話を傾けてボールを\n曲がりくねった道に沿って導こう！",
   "startGame": "スタート",
-  "gyroscopeControlled": "ジャイロスコープ操作",
+  "gyroscopeControlled": "加速度センサー操作",
   "gamesAvailable": "{count}個のゲームが利用可能",
   "@gamesAvailable": {
     "placeholders": {

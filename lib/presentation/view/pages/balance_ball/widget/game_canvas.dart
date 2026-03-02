@@ -136,6 +136,19 @@ class _GameCanvasState extends State<_GameCanvas> with SingleTickerProviderState
   static const double _explosionDuration = 0.65; // thời gian animation vụ nổ (s)
   static const int _explosionParticleCount = 32; // số hạt vụ nổ
 
+  // ── Speed tiers ───────────────────────────────────────────────────────────
+  // Mỗi cặp [milestone_giây, tốc_độ_px/s]:
+  //   0s → 90   : giai đoạn khởi động, dễ làm quen
+  //   15s → 155 : bắt đầu cảm nhận tốc độ
+  //   30s → 260 : đường cong rõ thách thức
+  //   40s → 380 : tốc độ cao, cần tập trung
+  //   60s → 540 : chế độ sinh tử
+  // Giữa các mốc: tốc độ tăng tuyến tính (lerp).
+  // Sau mốc cuối (60s): tiếp tục tăng thêm 10 px/s mỗi giây.
+  static const List<int> _speedMilestones = [0, 15, 30, 40, 60];
+  static const List<double> _speedTargets = [90.0, 155.0, 260.0, 380.0, 540.0];
+  static const double _postLastTierGain = 10.0; // px/s tăng thêm mỗi giây sau mốc 60s
+
   @override
   void initState() {
     super.initState();
@@ -280,6 +293,28 @@ class _GameCanvasState extends State<_GameCanvas> with SingleTickerProviderState
     return _widthCurrent.clamp(baseMin, 220.0);
   }
 
+  // ── Compute scroll speed ──────────────────────────────────────────────────
+  // Trả về tốc độ cuộn (px/s) dựa trên số giây đã chơi.
+  // Trong mỗi tier: lerp tuyến tính từ tốc độ đầu tier → tốc độ cuối tier.
+  // Sau mốc cuối cùng (60s): tiếp tục tăng thêm [_postLastTierGain] px/s/giây.
+  double _computeScrollSpeed(int seconds) {
+    final n = _speedMilestones.length;
+    for (int i = n - 1; i >= 0; i--) {
+      if (seconds >= _speedMilestones[i]) {
+        if (i < n - 1) {
+          // Lerp tuyến tính giữa tier i và tier i+1
+          final span = (_speedMilestones[i + 1] - _speedMilestones[i]).toDouble();
+          final t = (seconds - _speedMilestones[i]) / span;
+          return _speedTargets[i] + (_speedTargets[i + 1] - _speedTargets[i]) * t;
+        }
+        // Vượt mốc cuối: tăng thêm hằng số mỗi giây
+        return (_speedTargets.last + (seconds - _speedMilestones.last) * _postLastTierGain)
+            .clamp(0.0, 800.0);
+      }
+    }
+    return _speedTargets.first;
+  }
+
   // ── Main game loop ────────────────────────────────────────────────────────
   // Được Ticker gọi mỗi frame. Tính dt (delta time giữa 2 frame),
   // cập nhật vật lý, đường đi, hạt nền, và kiểm tra va chạm.
@@ -337,11 +372,8 @@ class _GameCanvasState extends State<_GameCanvas> with SingleTickerProviderState
     final seconds = elapsed.inSeconds;
 
     // ── Difficulty scaling ─────────────────────────────────────────────────
-    // Tốc độ tăng tuyến tính từ đầu (5 px/s mỗi giây).
-    // Sau 30 giây, thêm thành phần bậc 2 để tốc độ tăng vọt.
-    final linearGain = seconds * 5.0;
-    final quadraticSurge = seconds > 30 ? (seconds - 30) * (seconds - 30) * 0.15 : 0.0;
-    _scrollSpeed = (90.0 + linearGain + quadraticSurge).clamp(90.0, 700.0);
+    // Tốc độ tăng theo speed tiers: lerp tuyến tính giữa các mốc thời gian.
+    _scrollSpeed = _computeScrollSpeed(seconds);
 
     // Độ rộng đường hẹp dần: 130px ban đầu → tối thiểu 60px
     _pathWidth = (130.0 - (seconds * 0.8).clamp(0.0, 70.0)).clamp(60.0, 130.0);

@@ -21,7 +21,7 @@
   "balanceBallTitle": "밸런스 볼",
   "balanceBallDescription": "전화기를 기울여 공을\n구불구불한 길을 따라 안내하세요!",
   "startGame": "시작",
-  "gyroscopeControlled": "자이로스코프 제어",
+  "gyroscopeControlled": "가속도계 제어",
   "gamesAvailable": "{count}개 게임 이용 가능",
   "@gamesAvailable": {
     "placeholders": {

@@ -21,7 +21,7 @@
   "balanceBallTitle": "BALANCE BALL",
   "balanceBallDescription": "Tilt your phone to guide the ball\nalong the winding road!",
   "startGame": "START",
-  "gyroscopeControlled": "Gyroscope controlled",
+  "gyroscopeControlled": "Accelerometer controlled",
   "gamesAvailable": "{count} Games Available",
   "@gamesAvailable": {
     "placeholders": {

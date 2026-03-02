@@ -21,7 +21,7 @@
   "balanceBallTitle": "BALANCE BALL",
   "balanceBallDescription": "Miringkan ponselmu untuk memandu bola\ndi sepanjang jalan yang berliku!",
   "startGame": "MULAI",
-  "gyroscopeControlled": "Dikontrol Giroskop",
+  "gyroscopeControlled": "Dikontrol Akselerometer",
   "gamesAvailable": "{count} game tersedia",
   "@gamesAvailable": {
     "placeholders": {

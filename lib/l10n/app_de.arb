@@ -21,7 +21,7 @@
   "balanceBallTitle": "BALANCE BALL",
   "balanceBallDescription": "Neige dein Telefon, um den Ball\nentlang der kurvenreichen Straße zu führen!",
   "startGame": "START",
-  "gyroscopeControlled": "Gyroskop gesteuert",
+  "gyroscopeControlled": "Beschleunigungssensor gesteuert",
   "gamesAvailable": "{count} Spiele verfügbar",
   "@gamesAvailable": {
     "placeholders": {

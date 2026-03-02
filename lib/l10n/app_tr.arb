@@ -21,7 +21,7 @@
   "balanceBallTitle": "BALANCE BALL",
   "balanceBallDescription": "Topu kıvrımlı yol boyunca yönlendirmek\niçin telefonunuzu eğin!",
   "startGame": "BAŞLA",
-  "gyroscopeControlled": "Jiroskop kontrolü",
+  "gyroscopeControlled": "İvmeölçer kontrolü",
   "gamesAvailable": "{count} oyun mevcut",
   "@gamesAvailable": {
     "placeholders": {

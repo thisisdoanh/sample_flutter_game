@@ -21,7 +21,7 @@
   "balanceBallTitle": "BALANCE BALL",
   "balanceBallDescription": "¡Inclina tu teléfono para guiar la pelota\na lo largo del camino sinuoso!",
   "startGame": "INICIAR",
-  "gyroscopeControlled": "Controlado por giroscopio",
+  "gyroscopeControlled": "Controlado por acelerómetro",
   "gamesAvailable": "{count} juegos disponibles",
   "@gamesAvailable": {
     "placeholders": {

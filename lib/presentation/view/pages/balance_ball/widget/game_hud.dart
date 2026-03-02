@@ -55,9 +55,7 @@ class _HudCard extends StatelessWidget {
         color: Colors.black.withValues(alpha: 0.45),
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(color: color.withValues(alpha: 0.5), width: 1.5),
-        boxShadow: [
-          BoxShadow(color: color.withValues(alpha: 0.2), blurRadius: 10),
-        ],
+        boxShadow: [BoxShadow(color: color.withValues(alpha: 0.2), blurRadius: 10)],
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -76,10 +74,7 @@ class _HudCard extends StatelessWidget {
                     .bold
                     .withLetterSpacing(1.2),
               ),
-              Text(
-                value,
-                style: kTextStyle.size(16.sp).withColor(color).extraBold,
-              ),
+              Text(value, style: kTextStyle.size(16.sp).withColor(color).extraBold),
             ],
           ),
         ],

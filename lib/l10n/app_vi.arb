@@ -21,7 +21,7 @@
   "balanceBallTitle": "BALANCE BALL",
   "balanceBallDescription": "Nghiêng điện thoại để dẫn bóng\ndọc theo con đường quanh co!",
   "startGame": "BẮT ĐẦU",
-  "gyroscopeControlled": "Điều khiển bằng con quay hồi chuyển",
+  "gyroscopeControlled": "Điều khiển bằng gia tốc kế",
   "gamesAvailable": "{count} trò chơi có sẵn",
   "@gamesAvailable": {
     "placeholders": {

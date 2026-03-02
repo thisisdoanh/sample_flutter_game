@@ -1,11 +1,7 @@
 part of '../balance_ball_page.dart';
 
 class _GameOverScreen extends StatelessWidget {
-  const _GameOverScreen({
-    required this.score,
-    required this.bestScore,
-    required this.onRestart,
-  });
+  const _GameOverScreen({required this.score, required this.bestScore, required this.onRestart});
 
   final int score;
   final int bestScore;
@@ -43,11 +39,7 @@ class _GameOverScreen extends StatelessWidget {
 
                 Text(
                   l10n.gameOverTitle,
-                  style: kTextStyle
-                      .size(28.sp)
-                      .withColor(Colors.white)
-                      .black
-                      .withLetterSpacing(3),
+                  style: kTextStyle.size(28.sp).withColor(Colors.white).black.withLetterSpacing(3),
                 ),
                 SizedBox(height: 6.h),
                 Text(
@@ -183,10 +175,7 @@ class _ScoreCard extends StatelessWidget {
         children: [
           Icon(icon, size: 22.r, color: color),
           SizedBox(height: 6.h),
-          Text(
-            value,
-            style: kTextStyle.size(24.sp).withColor(color).black,
-          ),
+          Text(value, style: kTextStyle.size(24.sp).withColor(color).black),
           Text(
             label,
             style: kTextStyle

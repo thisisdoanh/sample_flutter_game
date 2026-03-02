@@ -21,7 +21,7 @@
   "balanceBallTitle": "平衡球",
   "balanceBallDescription": "倾斜手机，引导球\n沿着蜿蜒的道路前进！",
   "startGame": "开始",
-  "gyroscopeControlled": "陀螺仪控制",
+  "gyroscopeControlled": "加速度计控制",
   "gamesAvailable": "{count} 个游戏可用",
   "@gamesAvailable": {
     "placeholders": {

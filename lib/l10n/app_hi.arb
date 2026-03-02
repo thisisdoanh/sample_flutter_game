@@ -21,7 +21,7 @@
   "balanceBallTitle": "BALANCE BALL",
   "balanceBallDescription": "गेंद को टेढ़ी-मेढ़ी सड़क पर\nले जाने के लिए अपना फोन झुकाएं!",
   "startGame": "शुरू करें",
-  "gyroscopeControlled": "जाइरोस्कोप नियंत्रित",
+  "gyroscopeControlled": "एक्सेलेरोमीटर नियंत्रित",
   "gamesAvailable": "{count} गेम उपलब्ध",
   "@gamesAvailable": {
     "placeholders": {

@@ -21,7 +21,7 @@
   "balanceBallTitle": "BALANCE BALL",
   "balanceBallDescription": "Наклоните телефон, чтобы вести мяч\nпо извилистой дороге!",
   "startGame": "СТАРТ",
-  "gyroscopeControlled": "Управление гироскопом",
+  "gyroscopeControlled": "Управление акселерометром",
   "gamesAvailable": "{count} игры доступны",
   "@gamesAvailable": {
     "placeholders": {
