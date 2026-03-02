@@ -55,7 +55,7 @@ class _GameOverScreen extends StatelessWidget {
                 Row(
                   children: [
                     Expanded(
-                      child: _ScoreCard(
+                      child: GameScoreCard(
                         label: l10n.scoreYourTime,
                         value: '${score}s',
                         color: const Color(0xFF22F3F8),
@@ -64,7 +64,7 @@ class _GameOverScreen extends StatelessWidget {
                     ),
                     SizedBox(width: 12.w),
                     Expanded(
-                      child: _ScoreCard(
+                      child: GameScoreCard(
                         label: l10n.hudBest,
                         value: '${bestScore}s',
                         color: const Color(0xFFFFD700),
@@ -76,30 +76,7 @@ class _GameOverScreen extends StatelessWidget {
 
                 if (_isNewBest) ...[
                   SizedBox(height: 16.h),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-                    decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        colors: [Color(0xFFFFD700), Color(0xFFFF9F1C)],
-                      ),
-                      borderRadius: BorderRadius.circular(100.r),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(Icons.star_rounded, size: 16.r, color: Colors.white),
-                        SizedBox(width: 6.w),
-                        Text(
-                          l10n.newBestRecord,
-                          style: kTextStyle
-                              .size(12.sp)
-                              .withColor(Colors.white)
-                              .extraBold
-                              .withLetterSpacing(1),
-                        ),
-                      ],
-                    ),
-                  ),
+                  const GameNewBestBadge(),
                 ],
 
                 SizedBox(height: 32.h),
@@ -144,47 +121,6 @@ class _GameOverScreen extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class _ScoreCard extends StatelessWidget {
-  const _ScoreCard({
-    required this.label,
-    required this.value,
-    required this.color,
-    required this.icon,
-  });
-
-  final String label;
-  final String value;
-  final Color color;
-  final IconData icon;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 16.h),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.08),
-        borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: color.withValues(alpha: 0.3), width: 1.5),
-      ),
-      child: Column(
-        children: [
-          Icon(icon, size: 22.r, color: color),
-          SizedBox(height: 6.h),
-          Text(value, style: kTextStyle.size(24.sp).withColor(color).black),
-          Text(
-            label,
-            style: kTextStyle
-                .size(9.sp)
-                .withColor(color.withValues(alpha: 0.6))
-                .bold
-                .withLetterSpacing(1.2),
-          ),
-        ],
       ),
     );
   }

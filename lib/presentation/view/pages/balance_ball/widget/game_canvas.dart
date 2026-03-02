@@ -505,37 +505,39 @@ class _GameCanvasState extends State<_GameCanvas> with SingleTickerProviderState
 
         // Chưa có game data → chỉ vẽ background tối
         if (!_gameStarted || _pathPoints.isEmpty) {
-          return _buildBackground();
+          return const GameBackground(
+            topColor: Color(0xFF0D1B2A),
+            bottomColor: Color(0xFF1A1A2E),
+            gridColor: Color(0xFF1E3A5A),
+          );
         }
 
-        // Truyền toàn bộ dữ liệu cần thiết vào CustomPainter để render
-        return CustomPaint(
-          painter: _GamePainter(
-            pathPoints: List.unmodifiable(_pathPoints),
-            particles: List.unmodifiable(_particles),
-            explosionParticles: List.unmodifiable(_explosionParticles),
-            scrollY: _scrollY,
-            ballX: _ballX,
-            ballY: _height * _ballScreenYRatio,
-            ballRadius: _ballRadius,
-            isExploding: _isExploding,
-          ),
-          size: Size(_width, _height),
-          child: const SizedBox.expand(),
+        // Background cuộn + game content render trong Stack
+        return Stack(
+          children: [
+            GameBackground(
+              topColor: const Color(0xFF0D1B2A),
+              bottomColor: const Color(0xFF1A1A2E),
+              gridColor: const Color(0xFF1E3A5A),
+              scrollY: _scrollY,
+            ),
+            CustomPaint(
+              painter: _GamePainter(
+                pathPoints: List.unmodifiable(_pathPoints),
+                particles: List.unmodifiable(_particles),
+                explosionParticles: List.unmodifiable(_explosionParticles),
+                scrollY: _scrollY,
+                ballX: _ballX,
+                ballY: _height * _ballScreenYRatio,
+                ballRadius: _ballRadius,
+                isExploding: _isExploding,
+              ),
+              size: Size(_width, _height),
+              child: const SizedBox.expand(),
+            ),
+          ],
         );
       },
-    );
-  }
-
-  Widget _buildBackground() {
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [Color(0xFF0D1B2A), Color(0xFF1A1A2E)],
-        ),
-      ),
     );
   }
 }
@@ -543,7 +545,8 @@ class _GameCanvasState extends State<_GameCanvas> with SingleTickerProviderState
 // ─────────────────────────────────────────────────────────────────────────────
 // _GamePainter — CustomPainter vẽ toàn bộ game mỗi frame
 //
-// Thứ tự vẽ (painter's algorithm): background → particles → road → ball → explosion
+// Thứ tự vẽ (painter's algorithm): particles → road → ball → explosion
+// Background được vẽ bởi GameBackground widget bên dưới trong Stack.
 // ─────────────────────────────────────────────────────────────────────────────
 
 class _GamePainter extends CustomPainter {
@@ -569,7 +572,6 @@ class _GamePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    _drawBackground(canvas, size);
     _drawParticles(canvas);
     _drawRoad(canvas, size);
     // Ẩn bóng ngay khi va chạm, chỉ hiện hiệu ứng nổ
@@ -578,37 +580,6 @@ class _GamePainter extends CustomPainter {
     }
     if (isExploding) {
       _drawExplosion(canvas);
-    }
-  }
-
-  // ── Background ────────────────────────────────────────────────────────────
-  // Vẽ gradient tối từ trên xuống dưới và lưới ô vuông tạo cảm giác cyber/game.
-  // Lưới dịch chuyển theo scrollY để có ảo giác di chuyển liên tục.
-  void _drawBackground(Canvas canvas, Size size) {
-    // Gradient nền
-    final rect = Offset.zero & size;
-    canvas.drawRect(
-      rect,
-      Paint()
-        ..shader = const LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [Color(0xFF0D1B2A), Color(0xFF1A1A2E)],
-        ).createShader(rect),
-    );
-
-    // Lưới ngang & dọc cuộn theo scrollY để tạo hiệu ứng chuyển động
-    final gridPaint = Paint()
-      ..color = const Color(0xFF1E3A5A).withValues(alpha: 0.4)
-      ..strokeWidth = 0.5;
-    const gridSpacing = 40.0;
-    final offsetGrid = scrollY % gridSpacing;
-
-    for (double y = -offsetGrid; y < size.height; y += gridSpacing) {
-      canvas.drawLine(Offset(0, y), Offset(size.width, y), gridPaint);
-    }
-    for (double x = 0; x < size.width; x += gridSpacing) {
-      canvas.drawLine(Offset(x, 0), Offset(x, size.height), gridPaint);
     }
   }
 

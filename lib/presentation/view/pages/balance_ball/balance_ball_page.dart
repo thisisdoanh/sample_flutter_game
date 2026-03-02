@@ -12,6 +12,10 @@ import 'package:template_bloc/presentation/base/base_page.dart';
 import 'package:template_bloc/shared/common/game_phase.dart';
 import 'package:template_bloc/presentation/view/pages/balance_ball/balance_ball_bloc.dart';
 import 'package:template_bloc/presentation/widgets/app_container.dart';
+import 'package:template_bloc/presentation/widgets/game/game_background.dart';
+import 'package:template_bloc/presentation/widgets/game/game_hud_card.dart';
+import 'package:template_bloc/presentation/widgets/game/game_new_best_badge.dart';
+import 'package:template_bloc/presentation/widgets/game/game_score_card.dart';
 import 'package:template_bloc/shared/extension/text_style.dart';
 
 part 'widget/game_canvas.dart';

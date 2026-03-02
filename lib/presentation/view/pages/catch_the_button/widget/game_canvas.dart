@@ -238,31 +238,43 @@ class _CatchGameCanvasState extends State<_CatchGameCanvas>
         final btnHalfPx = _btnHalf.r; // bán kính thực tế (dp → px theo ScreenUtil)
         final btnSizePx = btnHalfPx * 2;
 
-        return CustomPaint(
-          painter: _BgPainter(particles: _particles),
-          size: Size(_width, _height),
-          child: Stack(
-            children: [
-              if (_sizeReady && _btnPhase != _BtnPhase.idle)
-                AnimatedBuilder(
-                  animation: Listenable.merge([_scaleAnim, _countdownCtrl]),
-                  builder: (context, _) => Positioned(
-                    left: _btnX - btnHalfPx,
-                    top: _btnY - btnHalfPx,
-                    child: GestureDetector(
-                      onTap: _btnPhase == _BtnPhase.visible ? _onButtonTapped : null,
-                      child: Transform.scale(
-                        scale: _scaleAnim.value.clamp(0.0, 1.2),
-                        child: _CatchButton(
-                          ringRemaining: 1 - _countdownCtrl.value,
-                          size: btnSizePx,
+        return Stack(
+          children: [
+            // Nền chung: gradient tối + lưới cyber
+            const GameBackground(
+              topColor: Color(0xFF0D1020),
+              bottomColor: Color(0xFF1A1230),
+              gridColor: Color(0xFF2A1F5A),
+              gridAlpha: 0.35,
+            ),
+            // Lớp hạt nền purple + button
+            CustomPaint(
+              painter: _ParticlePainter(particles: _particles),
+              size: Size(_width, _height),
+              child: Stack(
+                children: [
+                  if (_sizeReady && _btnPhase != _BtnPhase.idle)
+                    AnimatedBuilder(
+                      animation: Listenable.merge([_scaleAnim, _countdownCtrl]),
+                      builder: (context, _) => Positioned(
+                        left: _btnX - btnHalfPx,
+                        top: _btnY - btnHalfPx,
+                        child: GestureDetector(
+                          onTap: _btnPhase == _BtnPhase.visible ? _onButtonTapped : null,
+                          child: Transform.scale(
+                            scale: _scaleAnim.value.clamp(0.0, 1.2),
+                            child: _CatchButton(
+                              ringRemaining: 1 - _countdownCtrl.value,
+                              size: btnSizePx,
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ),
-            ],
-          ),
+                ],
+              ),
+            ),
+          ],
         );
       },
     );
@@ -397,41 +409,16 @@ class _RingPainter extends CustomPainter {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// _BgPainter — vẽ nền dark + lưới + hạt
+// _ParticlePainter — vẽ hạt nền purple nhẹ (nền được xử lý bởi GameBackground)
 // ─────────────────────────────────────────────────────────────────────────────
 
-class _BgPainter extends CustomPainter {
-  const _BgPainter({required this.particles});
+class _ParticlePainter extends CustomPainter {
+  const _ParticlePainter({required this.particles});
 
   final List<_Particle> particles;
 
   @override
   void paint(Canvas canvas, Size size) {
-    // Gradient nền tối
-    final rect = Offset.zero & size;
-    canvas.drawRect(
-      rect,
-      Paint()
-        ..shader = const LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [Color(0xFF0D1020), Color(0xFF1A1230)],
-        ).createShader(rect),
-    );
-
-    // Lưới nền tĩnh tạo cảm giác cyber
-    final gridPaint = Paint()
-      ..color = const Color(0xFF2A1F5A).withValues(alpha: 0.35)
-      ..strokeWidth = 0.5;
-    const gridSpacing = 40.0;
-    for (double y = 0; y < size.height; y += gridSpacing) {
-      canvas.drawLine(Offset(0, y), Offset(size.width, y), gridPaint);
-    }
-    for (double x = 0; x < size.width; x += gridSpacing) {
-      canvas.drawLine(Offset(x, 0), Offset(x, size.height), gridPaint);
-    }
-
-    // Hạt nền màu purple nhẹ
     for (final p in particles) {
       canvas.drawCircle(
         Offset(p.x, p.y),
@@ -442,5 +429,5 @@ class _BgPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(_BgPainter old) => true;
+  bool shouldRepaint(_ParticlePainter old) => true;
 }
