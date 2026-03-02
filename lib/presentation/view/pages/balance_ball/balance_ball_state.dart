@@ -1,7 +1,5 @@
 part of 'balance_ball_bloc.dart';
 
-enum GamePhase { idle, playing, gameOver }
-
 @freezed
 abstract class BalanceBallState extends BaseState with _$BalanceBallState {
   const factory BalanceBallState({
