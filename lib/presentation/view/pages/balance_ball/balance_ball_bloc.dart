@@ -15,17 +15,29 @@ part 'balance_ball_state.dart';
 class BalanceBallBloc extends BaseBloc<BalanceBallEvent, BalanceBallState> {
   BalanceBallBloc() : super(const BalanceBallState()) {
     on<BalanceBallEvent>((event, emit) async {
-        try {
-          switch(event) {
-            case _LoadData():
-              _handleEventLoadData(emit, event);
-              break;
-          }
-        } catch(e,s) {
-            handleError(emit, ErrorConverter.convert(e, s));
+      try {
+        switch (event) {
+          case _LoadData():
+            break;
+          case _StartGame():
+            emit(state.copyWith(gamePhase: GamePhase.playing, score: 0));
+            break;
+          case _UpdateScore():
+            emit(state.copyWith(score: event.score));
+            break;
+          case _GameOver():
+            final best = event.score > state.bestScore ? event.score : state.bestScore;
+            emit(
+              state.copyWith(gamePhase: GamePhase.gameOver, score: event.score, bestScore: best),
+            );
+            break;
+          case _Restart():
+            emit(state.copyWith(gamePhase: GamePhase.idle));
+            break;
         }
+      } catch (e, s) {
+        handleError(emit, ErrorConverter.convert(e, s));
+      }
     });
   }
-
-  Future<void> _handleEventLoadData(Emitter<BalanceBallState> emit, _LoadData event) async {}
 }
