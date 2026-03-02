@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
-import 'package:template_bloc/shared/utils/app_log.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:template_bloc/shared/utils/app_log.dart';
 
 @singleton
 class PreferenceUtils {
