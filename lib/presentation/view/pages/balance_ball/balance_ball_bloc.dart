@@ -5,6 +5,7 @@ import 'package:injectable/injectable.dart';
 import 'package:template_bloc/presentation/base/base_bloc.dart';
 import 'package:template_bloc/presentation/base/base_state.dart';
 import 'package:template_bloc/presentation/base/page_status.dart';
+import 'package:template_bloc/data/pref/pref_store.dart';
 import 'package:template_bloc/shared/common/error_converter.dart';
 
 part 'balance_ball_bloc.freezed.dart';
@@ -13,11 +14,12 @@ part 'balance_ball_state.dart';
 
 @injectable
 class BalanceBallBloc extends BaseBloc<BalanceBallEvent, BalanceBallState> {
-  BalanceBallBloc() : super(const BalanceBallState()) {
+  BalanceBallBloc(this._pref) : super(const BalanceBallState()) {
     on<BalanceBallEvent>((event, emit) async {
       try {
         switch (event) {
           case _LoadData():
+            emit(state.copyWith(bestScore: _pref.getBalanceBallBestScore()));
             break;
           case _StartGame():
             emit(state.copyWith(gamePhase: GamePhase.playing, score: 0));
@@ -27,6 +29,9 @@ class BalanceBallBloc extends BaseBloc<BalanceBallEvent, BalanceBallState> {
             break;
           case _GameOver():
             final best = event.score > state.bestScore ? event.score : state.bestScore;
+            if (best > state.bestScore) {
+              await _pref.saveBalanceBallBestScore(best);
+            }
             emit(
               state.copyWith(gamePhase: GamePhase.gameOver, score: event.score, bestScore: best),
             );
@@ -40,4 +45,6 @@ class BalanceBallBloc extends BaseBloc<BalanceBallEvent, BalanceBallState> {
       }
     });
   }
+
+  final PrefStore _pref;
 }

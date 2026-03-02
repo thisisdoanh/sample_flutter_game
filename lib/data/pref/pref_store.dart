@@ -18,4 +18,8 @@ abstract class PrefStore {
   // Onboarding
   bool isFirstLaunch();
   Future<bool> setFirstLaunchDone();
+
+  // Games
+  int getBalanceBallBestScore();
+  Future<bool> saveBalanceBallBestScore(int score);
 }
