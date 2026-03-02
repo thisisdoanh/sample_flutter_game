@@ -5,9 +5,10 @@ class _CountBadge extends BaseSubPage<ChooseGameBloc, ChooseGameEvent, ChooseGam
 
   @override
   Widget builder(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return BlocSelector<ChooseGameBloc, ChooseGameState, int>(
       selector: (state) => state.games.length,
-      builder: (context, state) {
+      builder: (context, count) {
         return Container(
           padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
           decoration: BoxDecoration(
@@ -24,7 +25,7 @@ class _CountBadge extends BaseSubPage<ChooseGameBloc, ChooseGameEvent, ChooseGam
               Icon(Icons.gamepad_rounded, size: 16.r, color: AppColors.orange6600),
               SizedBox(width: 6.w),
               Text(
-                '$state Games Available',
+                l10n.gamesAvailable(count),
                 style: kTextStyle.size(13.sp).withColor(AppColors.orange6600).extraBold,
               ),
             ],

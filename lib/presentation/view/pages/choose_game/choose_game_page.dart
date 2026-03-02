@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:template_bloc/data/model/game_model.dart';
 import 'package:template_bloc/domain/enums/game_route.dart';
+import 'package:template_bloc/l10n/app_localizations.dart';
 import 'package:template_bloc/presentation/base/base_page.dart';
 import 'package:template_bloc/presentation/base/base_sub_page.dart';
 import 'package:template_bloc/presentation/resources/colors.dart';

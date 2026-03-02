@@ -6,6 +6,7 @@ class _GameCard extends BaseSubPage<ChooseGameBloc, ChooseGameEvent, ChooseGameS
 
   @override
   Widget builder(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return BouncyButton.primary(
       onPressed: () {
         _navigateToGame(context, gameModel.targetRoute);
@@ -40,7 +41,11 @@ class _GameCard extends BaseSubPage<ChooseGameBloc, ChooseGameEvent, ChooseGameS
           // Game name
           Text(
             gameModel.name,
-            style: kTextStyle.size(14.sp).withColor(Colors.white).extraBold.withHeight(1.2),
+            style: kTextStyle
+                .size(14.sp)
+                .withColor(Colors.white)
+                .extraBold
+                .withHeight(1.2),
             textAlign: TextAlign.center,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
@@ -73,7 +78,7 @@ class _GameCard extends BaseSubPage<ChooseGameBloc, ChooseGameEvent, ChooseGameS
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  'PLAY',
+                  l10n.play,
                   style: kTextStyle
                       .size(10.sp)
                       .withColor(Colors.white)

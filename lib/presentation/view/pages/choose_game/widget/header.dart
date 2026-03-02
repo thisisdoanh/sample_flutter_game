@@ -3,6 +3,7 @@ part of '../choose_game_page.dart';
 class _Header extends BaseSubPage<ChooseGameBloc, ChooseGameEvent, ChooseGameState> {
   @override
   Widget builder(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Padding(
       padding: EdgeInsets.fromLTRB(20.w, 28.h, 20.w, 20.h),
       child: Column(
@@ -30,21 +31,28 @@ class _Header extends BaseSubPage<ChooseGameBloc, ChooseGameEvent, ChooseGameSta
 
           // "Pick a"
           Text(
-            'Pick a',
-            style: kTextStyle.size(38.sp).withColor(AppColors.dark100).black.withHeight(1.1),
+            l10n.pickA,
+            style: kTextStyle
+                .size(38.sp)
+                .withColor(AppColors.dark100)
+                .black
+                .withHeight(1.1),
           ),
 
           // "Game!" — color overridden by ShaderMask
           ShaderMask(
             blendMode: BlendMode.srcIn,
             shaderCallback: (bounds) => AppColors.warmLN.createShader(bounds),
-            child: Text('Game!', style: kTextStyle.size(38.sp).black.withHeight(1.1)),
+            child: Text(
+              l10n.gameExclamation,
+              style: kTextStyle.size(38.sp).black.withHeight(1.1),
+            ),
           ),
           SizedBox(height: 8.h),
 
           // Subtitle
           Text(
-            'Choose your adventure & start playing',
+            l10n.chooseAdventure,
             style: kTextStyle.size(14.sp).withColor(AppColors.gray90A8).medium,
           ),
           SizedBox(height: 16.h),
