@@ -31,41 +31,21 @@ class _Header extends BaseSubPage<ChooseGameBloc, ChooseGameEvent, ChooseGameSta
           // "Pick a"
           Text(
             'Pick a',
-            style: TextStyle(
-              fontSize: 38.sp,
-              fontWeight: FontWeight.w900,
-              color: AppColors.dark100,
-              fontFamily: FontFamily.manrope,
-              height: 1.1,
-            ),
+            style: kTextStyle.size(38.sp).withColor(AppColors.dark100).black.withHeight(1.1),
           ),
 
-          // "Game!" — gradient accent
+          // "Game!" — color overridden by ShaderMask
           ShaderMask(
             blendMode: BlendMode.srcIn,
             shaderCallback: (bounds) => AppColors.warmLN.createShader(bounds),
-            child: Text(
-              'Game!',
-              style: TextStyle(
-                fontSize: 38.sp,
-                fontWeight: FontWeight.w900,
-                fontFamily: FontFamily.manrope,
-                color: Colors.white, // overridden by ShaderMask
-                height: 1.1,
-              ),
-            ),
+            child: Text('Game!', style: kTextStyle.size(38.sp).black.withHeight(1.1)),
           ),
           SizedBox(height: 8.h),
 
           // Subtitle
           Text(
             'Choose your adventure & start playing',
-            style: TextStyle(
-              fontSize: 14.sp,
-              color: AppColors.gray90A8,
-              fontFamily: FontFamily.manrope,
-              fontWeight: FontWeight.w500,
-            ),
+            style: kTextStyle.size(14.sp).withColor(AppColors.gray90A8).medium,
           ),
           SizedBox(height: 16.h),
 

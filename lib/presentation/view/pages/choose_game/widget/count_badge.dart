@@ -25,12 +25,7 @@ class _CountBadge extends BaseSubPage<ChooseGameBloc, ChooseGameEvent, ChooseGam
               SizedBox(width: 6.w),
               Text(
                 '$state Games Available',
-                style: TextStyle(
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.w800,
-                  color: AppColors.orange6600,
-                  fontFamily: FontFamily.manrope,
-                ),
+                style: kTextStyle.size(13.sp).withColor(AppColors.orange6600).extraBold,
               ),
             ],
           ),
